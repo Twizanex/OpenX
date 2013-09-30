@@ -1,0 +1,14 @@
+# Regras de rewrite
+#RewriteEngine                     On
+#RewriteCond                       %{HTTP_HOST} ^domain.com$ [NC,OR]
+#RewriteCond                       %{HTTP_HOST} ^www.domain.com$
+#RewriteCond                       %{REQUEST_URI} !public/
+#RewriteRule                       (.*) /public/$1 [L]
+
+php_value memory_limit            512M
+php_value magic_quotes_runtime    Off
+php_value safe_mode               Off
+php_value upload_max_filesize     10M
+php_value register_argc_argv      1
+php_value file_uploads            On
+php_value gd.jpeg_ignore_warning  0
