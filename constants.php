@@ -37,6 +37,17 @@ $Id: constants.php 82773 2013-08-06 22:53:40Z chris.nutting $
  */
 function setupConstants()
 {
+
+    // Define Postgres data
+    $app_fog_services = json_decode(getenv("VCAP_SERVICES"), true);
+    $pg_config = $app_fog_services[""][0]["credentials"];
+
+    define("DB_NAME", $pg_config["name"]);
+    define("DB_USER", $pg_config["user"]);
+    define("DB_PASSWORD", $pg_config["password"]);
+    define("DB_HOST", $pg_config["hostname"]);
+    define("DB_PORT", $pg_config["port"]);
+
     // Define this version of Openads's constants
     define('OA_VERSION', '2.8.11');
     define('MAX_PRODUCT_NAME',      'OpenX');
