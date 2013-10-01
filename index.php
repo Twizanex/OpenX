@@ -30,19 +30,15 @@ $Id: index.php 82775 2013-08-06 23:40:26Z chris.nutting $
  * is not yet installed, we need to know that it was this file that was called,
  * so set a global variable.
  */
-/// define('ROOT_INDEX', true);
-///
-/// // Require the initialisation file
-/// require_once 'init.php';
-///
-/// // Required files
-/// require_once LIB_PATH . '/Admin/Redirect.php';
-///
-/// // Redirect to the admin interface
-/// //if ($conf['openads']['installed'])
-/// if (OA_INSTALLATION_STATUS == OA_INSTALLATION_STATUS_INSTALLED)
-/// {
-///     OX_Admin_Redirect::redirect();
-/// }
-getenv("VCAP_SERVICES")
+define('ROOT_INDEX', true);
+
+// Require the initialisation file
+require_once 'init.php';
+
+// Required files
+require_once LIB_PATH . '/Admin/Redirect.php';
+
+// Redirect to the admin interface
+//if ($conf['openads']['installed'])
+if (OA_INSTALLATION_STATUS == OA_INSTALLATION_STATUS_INSTALLED){ OX_Admin_Redirect::redirect(); }
 ?>
