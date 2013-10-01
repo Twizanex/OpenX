@@ -3,5 +3,6 @@
 <?php
   $services = getenv("VCAP_SERVICES");
   print_r( json_decode($services,true); );
+  echo $services
   // config for wp https://docs.appfog.com/languages/php/wordpress
 ?>
