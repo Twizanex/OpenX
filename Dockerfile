@@ -18,6 +18,5 @@ RUN apt-get -y update
 
 RUN apt-get install -y nginx-full git mongodb-10gen postgresql-9.1 php5-fpm
 RUN git clone --depth 1 -b docker https://github.com/paulopatto/OpenX.git /opt/openx
-RUN ln -s /opt/openx/etc/nginx.conf /etc/nginx/enabled-sites/openx.conf
+RUN ln -s /opt/openx/etc/nginx.conf /etc/nginx/sites-enabled/openx.conf
 RUN chown -R www-data:www-data /opt/openx
-
