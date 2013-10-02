@@ -1,0 +1,5 @@
+.*sw?
+nohup.out
+.rvmrc
+.DS_Store
+**.*~
