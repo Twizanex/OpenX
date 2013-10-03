@@ -26,13 +26,16 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
 RUN apt-get -y update
 
-RUN apt-get install -y nginx-full git postgresql-9.1 php5-fpm php-apc php5-imagick php5-imap php5-mcrypt php5-pgsql lynx vim wget curl sudo
+RUN apt-get install -y nginx-full git postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2 php5-fpm php-apc php5-imagick php5-imap php5-mcrypt php5-pgsql lynx vim wget curl sudo openssh-server
 RUN git clone --depth 1 -b docker https://github.com/paulopatto/OpenX.git /opt/openx
+RUN mkdir -p /var/run/sshd
 RUN rm /etc/php5/fpm/php.ini
 RUN rm /etc/nginx/sites-enabled/default
 RUN ln -s /opt/openx/etc/nginx.conf /etc/nginx/sites-enabled/openx.conf
 RUN ln -s /opt/openx/php.ini /etc/php5/fpm/php.ini
 RUN chown -R www-data:www-data /opt/openx
+RUN sudo -u postgres createuser -P -d -r -s docker
+RUN echo "listen_addresses='*'" >> /etc/postgresql/9.2/main/postgresql.conf
 
 # Expose ports
 # - web: 80 3000 8000 9000
