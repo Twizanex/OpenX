@@ -1,3 +1,10 @@
+# 09/17/13--12:37: OpenX Source continues as open source project Revive Adserver
+
+In a move that may come as a surprise to some people, OpenX Technologies, Inc. announced on Friday, September 13, 2013, that the ad serving product OpenX Source has been sold to an open source community project headed by former OpenX project leader Andrew Hill. Another prominent member of the new team is long standing  community member and former OpenX senior developer Matteo Beccati.
+
+
+
+
 # OpenX - The ad server for publishers who are serious about making money.
 
 OpenX is an open source ad serving tool that enables publishers to:
@@ -8,6 +15,9 @@ OpenX is an open source ad serving tool that enables publishers to:
 * Set rules to target the delivery of campaigns, or even ads, to specific users, to help maximise the effectiveness of campaigns.
 
 OpenX was formerly known as Openads and phpAdsNew.
+
+
+
 
 **Version** *2.8.11*
 
